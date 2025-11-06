@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import WelcomeHeader from '@/components/dashboard/WelcomeHeader';
 import { useAuth } from '@/context/AuthProvider';
@@ -16,10 +16,15 @@ const Dashboard = () => {
   const { data, loading: dataLoading } = useDashboard()
   const router = useRouter();
 
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+    }
+  }, [user, router]);
+
   if (authLoading) return <div className="p-8 text-gray-600">Loading...</div>;
 
   if (!user) {
-    router.push("/login");
     return null;
   }
   return (
@@ -27,7 +32,7 @@ const Dashboard = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Header */}
         <WelcomeHeader
-          name={user.name}
+          name={user.name || data?.user.name}
           loading={dataLoading}
           activeListsCount={data?.stats.activeListsCount}
           avgTripTime={data?.stats.avgTripTime}
