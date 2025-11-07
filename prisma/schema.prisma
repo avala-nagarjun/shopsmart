@@ -5,8 +5,9 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
-  output   = "../generated/prisma"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+  output        = "../generated/prisma"
 }
 
 datasource db {
@@ -50,7 +51,7 @@ model User {
 
 model Session {
   id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId           String
+  userId           String   @db.ObjectId
   user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   deviceId         String // persistent local identifier
   refreshTokenHash String // hash only, never raw token
@@ -67,10 +68,9 @@ model Session {
 }
 
 model SecurityEvent {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
-
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
   type      String // login, logout, logout_all, suspicious_attempt
   deviceId  String?
   ip        String?
