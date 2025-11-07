@@ -14,7 +14,7 @@ import { CategoryType } from "@/types/all";
 import { useCategory } from "@/hooks/useCategory";
 
 const CategoryManager = () => {
-  const { categories, categoriesSummary: summary, loading, error, createCategory, updateCategory, deleteCategory, deleteCategories, refetchCategories } = useCategory();
+  const { categories, categoriesSummary: summary, loading, createCategory, updateCategory, deleteCategory, refetchCategories } = useCategory();
   const [localCategories, setLocalCategories] = useState<CategoryType[]>(categories);
   const [activeView, setActiveView] = useState("grid"); // 'grid' or 'list'
   const [searchQuery, setSearchQuery] = useState("");

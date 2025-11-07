@@ -2,14 +2,14 @@ import React from 'react';
 import Icon from '@/components/AppIcon';
 
 interface SettingItemType {
-  label: string
-  description: string
-  value?: string
-  icon?: string
-  action?: React.ReactNode
-  showArrow?: boolean
-  className?: string
-  onClick?: () => void
+  label: string;
+  description: string;
+  value?: string | boolean;
+  icon?: string;
+  action?: React.ReactNode;
+  showArrow?: boolean;
+  className?: string;
+  onClick?: () => void;
 
 }
 

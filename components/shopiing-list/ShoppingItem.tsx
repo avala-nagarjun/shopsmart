@@ -27,7 +27,6 @@ interface ShoppingItemProps {
 
 const ShoppingItem: React.FC<ShoppingItemProps> = ({
     item,
-    categoryColor,
     onToggle,
     onEdit,
     onDelete,

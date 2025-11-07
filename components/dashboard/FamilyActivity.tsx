@@ -4,7 +4,7 @@ import React from "react";
 import Icon from "@/components/AppIcon";
 import { CustomeButton } from "@/components/ui/CustomeButton";
 import Link from "next/link";
-import AppImage from "../AppImage";
+// import AppImage from "../AppImage";
 
 interface FamilyActivityProps {
     familyMembers?: {
