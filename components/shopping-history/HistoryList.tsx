@@ -37,7 +37,7 @@ interface HistoryListProps {
 const HistoryList: React.FC<HistoryListProps> = ({ trips, onReorder }) => {
   const [expandedTrip, setExpandedTrip] = useState<string | null>(null);
 
-  const mockTrips = [
+  const mockTrips = trips ?? [
     {
       id: 'trip-001',
       date: '2024-10-12',

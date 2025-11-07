@@ -86,10 +86,6 @@ const InsightsCard = ({ insights, loading = false }: InsightsCardProps) => {
         }
     };
 
-    const getTrendIcon = (trend: string) => {
-        return trend === "up" ? "TrendingUp" : "TrendingDown";
-    };
-
     return (
         <div className="bg-surface rounded-xl border border-border p-6">
             <div className="flex items-center justify-between mb-6">

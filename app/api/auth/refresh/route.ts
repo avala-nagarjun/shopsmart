@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createAccessToken, createRefreshToken, verifyRefreshToken } from "@/lib/server/jwt";
 import db from "@/lib/db";
-import crypto from "crypto";
 import { hashToken } from "@/lib/hash";
 
 export async function POST() {

@@ -38,7 +38,7 @@ const GroceryLists: React.FC<GroceryListsProps> = ({ selectedListId, loading = f
                     Add New List
                 </CustomeButton>
 
-                {loading ? (
+                {(loading || creating) ? (
                     <div className="space-y-2">
                         {Array.from({ length: 4 }).map((_, index) => (
                             <div

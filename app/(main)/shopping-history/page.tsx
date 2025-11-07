@@ -39,12 +39,12 @@ const ShoppingHistory = () => {
   const [showFilters, setShowFilters] = useState(false);
 
   // Mock statistics data
-  const statsData = {
-    totalTrips: 47,
-    totalSpent: 2847,
-    avgPerTrip: 60.57,
-    totalItems: 892
-  };
+  // const statsData = {
+  //   totalTrips: 47,
+  //   totalSpent: 2847,
+  //   avgPerTrip: 60.57,
+  //   totalItems: 892
+  // };
 
   // Add mock data for components
   const mockSpendingData = [
@@ -53,15 +53,15 @@ const ShoppingHistory = () => {
     { month: 'Mar', spending: 520, trips: 9 }
   ];
 
-  const mockFrequentItems = [
-    { name: 'Milk', frequency: 15, lastBought: '2024-01-15' },
-    { name: 'Bread', frequency: 12, lastBought: '2024-01-14' }
-  ];
+  // const mockFrequentItems = [
+  //   { name: 'Milk', frequency: 15, lastBought: '2024-01-15' },
+  //   { name: 'Bread', frequency: 12, lastBought: '2024-01-14' }
+  // ];
 
-  const mockCategoryData = [
-    { category: 'Groceries', amount: 1200, percentage: 65 },
-    { category: 'Household', amount: 400, percentage: 20 }
-  ];
+  // const mockCategoryData = [
+  //   { category: 'Groceries', amount: 1200, percentage: 65 },
+  //   { category: 'Household', amount: 400, percentage: 20 }
+  // ];
 
 
 
